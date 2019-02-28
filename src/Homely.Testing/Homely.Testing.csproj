@@ -1,7 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.0</Version>
+    <Authors>Homely's developers</Authors>
+    <Company>Homely</Company>
+    <Product>Homely - testing library.</Product>
+    <Description>This library contains some test helpers which we regularly use in our test projects.</Description>
+    <Copyright>2019</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Homely/Homely.Testing</PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageIconUrl>https://i.imgur.com/PnxWhuz.jpg</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Homely/Homely.Testing</RepositoryUrl>
+    <RepositoryType>.net c# .net-core</RepositoryType>
+    <PackageTags>homely dotnet-core c# hosting dotnet testing test</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
