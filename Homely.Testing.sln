@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.28621.142
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homely.Testing", "src\Homely.Testing\Homely.Testing.csproj", "{FE29A8FC-A6F7-4CD1-BA92-1384FE1BF866}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homely.Testing.Tests", "tests\Homely.Testing.Tests\Homely.Testing.Tests.csproj", "{47377D46-D55C-44D0-B714-9E12AA78B6CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homely.Testing.Tests", "tests\Homely.Testing.Tests\Homely.Testing.Tests.csproj", "{47377D46-D55C-44D0-B714-9E12AA78B6CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9604E446-1933-4AD4-A6AB-FB8FF8690D24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D0EA52A8-F2EB-4247-9CE0-321D87E3124B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE29A8FC-A6F7-4CD1-BA92-1384FE1BF866} = {9604E446-1933-4AD4-A6AB-FB8FF8690D24}
+		{47377D46-D55C-44D0-B714-9E12AA78B6CD} = {D0EA52A8-F2EB-4247-9CE0-321D87E3124B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {070AAA10-C49E-4519-B769-27C2459BC1BB}
