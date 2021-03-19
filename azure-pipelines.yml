@@ -32,7 +32,7 @@ steps:
 - task: DotNetCoreInstaller@0
   inputs:
     packageType: 'sdk'
-    version: '5.0.100'
+    version: '3.1.407'
 
 - script: dotnet build --configuration $(buildConfiguration) -p:Version=$(assemblyVersion)
   displayName: 'dotnet build'
