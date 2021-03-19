@@ -29,7 +29,7 @@ steps:
   condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
 
 # Remove this task once .NET Core 2.2 is added to hosted agent.
-- task: DotNetCoreInstaller@0
+- task: DotNetCoreInstaller@2
   inputs:
     packageType: 'sdk'
     version: '3.1.407'
