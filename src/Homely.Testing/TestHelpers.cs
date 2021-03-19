@@ -1,4 +1,3 @@
-﻿using Shouldly;
 using System;
 using System.IO;
 
@@ -16,20 +15,32 @@ namespace Homely.Testing
         /// <param name="expected">Model which contains the expected structure/data. i.e. destination model.</param>
         /// <remarks>This extension method is mainly to be used during an <code>Assert</code> test section.</remarks>
         public static void ShouldLookLike<T>(this T actual,
-                                             T expected)
+                                             T expected) where T : class
         {
-            if (actual == null &&
-                expected == null)
+            if (actual is null &&
+                expected is null)
             {
                 return;
             }
 
-            actual.ShouldNotBeNull();
-            expected.ShouldNotBeNull();
+            // Either one can't be null.
+            if (actual is null)
+            {
+                throw new ArgumentNullException(nameof(actual));
+            }
+
+            if (expected is null)
+            {
+                throw new ArgumentNullException(nameof(expected));
+            }
 
             var actualJson = actual.ConvertToJson();
             var expectedJson = expected.ConvertToJson();
-            actualJson.ShouldBe(expectedJson);
+            
+            if (!actualJson.Equals(expectedJson, StringComparison.Ordinal))
+            {
+                throw new Exception($"'actualJson' doesn't match the 'expectedJson'. actualJson: [{actualJson}] vs expectedJson: [{expectedJson}]");
+            }
         }
 
         /// <summary>
@@ -74,7 +85,10 @@ namespace Homely.Testing
         /// <returns><code>string</code>: json result.</returns>
         public static string ConvertToJson<T>(this T model)
         {
-            model.ShouldNotBeNull();
+            if (model == null)
+            {
+                throw new ArgumentNullException(nameof(model));
+            }
 
             using (var stringWriter = new StringWriter())
             {
